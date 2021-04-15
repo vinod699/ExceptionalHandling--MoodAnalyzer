@@ -1,24 +1,14 @@
 package com.mood;
 
-import java.util.Locale;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class MoodAnalyzer {
-    String message;
+public class MoodAnalyzerTest {
+    @Test
+    public void testMoodAnalysis() throws Exception {
 
-    public MoodAnalyzer() {
-
-    }
-
-    public MoodAnalyzer(String message) {
-        this.message=message;
-
-    }
-
-    public String analyseMood() {
-        if(message.toLowerCase(Locale.ROOT).contains("happy")){
-            return "HAPPY";
-        }else{
-            return "SAD";
-        }
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+        String mood = moodAnalyzer.analyseMood("I am feellig SAD");
+        Assertions.assertEquals("SAD",mood);
     }
 }
