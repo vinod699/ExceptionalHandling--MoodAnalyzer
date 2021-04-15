@@ -15,10 +15,10 @@ public class MoodAnalyzer {
     }
 
     public String analyseMood() {
-        if(message.toLowerCase(Locale.ROOT).contains("sad")){
-            return "SAD";
-        }else{
+        if(message.toLowerCase(Locale.ROOT).contains("happy")){
             return "HAPPY";
+        }else{
+            return "SAD";
         }
     }
 }
